@@ -4,7 +4,8 @@
   "description": "Full Stack Simple Message Board Server Side",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_ENV=development nodemon ./bin/app.js",
+    "start": "node ./bin/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/danielle-maier/SMB-Server#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "knex": "^0.13.0",
