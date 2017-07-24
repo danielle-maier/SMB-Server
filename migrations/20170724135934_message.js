@@ -4,8 +4,8 @@ exports.up = function(knex, Promise) {
     message.varchar("name").notNullable();
     message.varchar("title").notNullable();
     message.text("messageBody").notNullable();
-    message.date("date").notNullable();
-    message.timestamp("timestamp");
+    message.dateTime('createdAt').notNullable().defaultTo(knex.raw('now()'));
+    message.dateTime('updatedAt').notNullable().defaultTo(knex.raw('now()'));
   });
 };
 
