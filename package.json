@@ -2,10 +2,10 @@
   "name": "SMB-Server",
   "version": "1.0.0",
   "description": "Full Stack Simple Message Board Server Side",
-  "main": "app.js",
+  "main":  "app.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon ./bin/app.js",
-    "start": "node ./bin/app.js"
+    "start": "node ./app.js"
   },
   "repository": {
     "type": "git",

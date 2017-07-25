@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const breweries = require("./routes/messages");
+const messages = require("./routes/messages");
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use("/messages", messages);
@@ -20,6 +21,6 @@ app.use(function(err, req, res, next) {
         error: app.get("env") === "development" ? err : {}
     });
 });
+app.listen(port);
 
-
-module.exports = app;
+// module.exports = app;
