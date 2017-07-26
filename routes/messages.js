@@ -2,11 +2,19 @@ const express = require("express");
 const router = express.Router();
 const queries = require("../queries.js");
 
-router.get("/", function(request, response, next) {
+router.get("/", (req, res) => {
     queries.getMessages()
     .then(function(messages){
-        response.json(messages);
+        res.json(messages);
     });
 });
+
+router.get("/:id", (req,res) => {
+  queries.getMessageByID(req.prams.id)
+  .then(function(message){
+    res.json(message);
+  });
+)};
+
 
 module.exports = router;
