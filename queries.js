@@ -18,9 +18,8 @@ module.exports = {
       .insert(postData)
       .returning('id');
   },
-  editMessage: function(editedMessageBody) {
-    return knex ('message')
-    .update('message_body' , editedMessageBody)
-    .returning('id');
+  editMessage: function(message_id, editedMessageBody) {
+    return knex('message').where('id', message_id)
+    .update("message_body", editedMessageBody);
   }
 };

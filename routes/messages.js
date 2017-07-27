@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const queries = require("../queries.js");
+const bodyParser = require("body-parser");
 
 router.get("/", (req, res) => {
   queries.getMessages()
@@ -16,29 +17,27 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req,res) => {
-  let postDataObj = {};
-  postDataObj.name = req.body.name;
-  postDataObj.title = req.body.title;
-  postDataObj.message_body = req.body.message_body;
-  queries.addMessage(postDataObj)
-  .then(function(messages){
-    res.json(messages);
-  });
+router.post("/", (req, res) => {
+  queries.addMessage(req.body)
+    .then(function(messages) {
+      res.json(messages);
+    });
 });
 
-router.put("/:id", (req,res) => {
-  queries.editMessage(req.body.message_body)
-  .then(function(message){
-    res.json(message);
-  });
+router.put("/:id", (req, res) => {
+  queries.editMessage(req.params.id, req.body[0].message_body)
+    .then(function(message) {
+      res.json(message);
+    });
+  // let something = req.body[0].message_body;
+  // res.json(something);
 });
 
-router.delete("/:id", (req,res) =>{
+router.delete("/:id", (req, res) => {
   queries.deleteMessageByID(req.params.id)
-  .then(function(messages){
-    res.json(messages);
-  });
+    .then(function(messages) {
+      res.json(messages);
+    });
 });
 
 module.exports = router;
