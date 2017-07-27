@@ -3,9 +3,9 @@ exports.up = function(knex, Promise) {
     message.increments("id");
     message.varchar("name").notNullable();
     message.varchar("title").notNullable().unique();
-    message.text("messageBody").notNullable();
-    message.dateTime('createdAt').notNullable().defaultTo(knex.raw('now()'));
-    message.dateTime('updatedAt').notNullable().defaultTo(knex.raw('now()'));
+    message.text("message_body").notNullable();
+    message.dateTime("created_at").notNullable().defaultTo(knex.raw('now()'));
+    message.dateTime("updated_at").notNullable().defaultTo(knex.raw('now()'));
   });
 };
 

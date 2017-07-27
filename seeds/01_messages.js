@@ -6,27 +6,27 @@ exports.seed = function(knex, Promise) {
       id: 1,
       name: 'Dani',
       title: 'well well well',
-      messageBody: 'Let me out.'
+      message_body: 'Let me out.'
     }, {
       id: 2,
       name: 'Dani',
       title: 'well...',
-      messageBody: 'This is not a dance'
+      message_body: 'This is not a dance'
     },{
       id: 3,
       name: 'Angela',
       title: 'wellichy',
-      messageBody: 'I am the one who\'s been here for far too long'
+      message_body: 'I am the one who\'s been here for far too long'
     },{
       id: 4,
       name: 'Angela',
       title: 'you can\'t be what you were',
-      messageBody: 'This is not a dance.'
+      message_body: 'This is not a dance.'
     },{
       id: 5,
       name: 'Jamie',
       title: 'well well',
-      messageBody: 'In the midnight hour, she cried more more more'
+      message_body: 'In the midnight hour, she cried more more more'
     }];
 
     return knex('message').insert(messages);
