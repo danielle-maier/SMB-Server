@@ -9,7 +9,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use("/messages", messages);
 
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error("Not Found");
     err.status = 404;
@@ -24,5 +23,3 @@ app.use(function(err, req, res, next) {
     });
 });
 app.listen(port);
-
-// module.exports = app;
