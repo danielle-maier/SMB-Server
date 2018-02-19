@@ -2,7 +2,7 @@
   "name": "SMB-Server",
   "version": "1.0.0",
   "description": "Full Stack Simple Message Board Server Side",
-  "main":  "app.js",
+  "main": "app.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon ./bin/app.js",
     "start": "node ./app.js"
@@ -23,7 +23,7 @@
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
-    "knex": "^0.13.0",
+    "knex": "^0.14.3",
     "pg": "^7.0.2"
   }
 }
